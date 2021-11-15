@@ -1,44 +1,31 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+# Weather info
+### A simple React + Redux exercise
 
-## Available Scripts
+The goal of this exercise is to build a simple single-page web application using *react* and *redux*.
 
-In the project directory, you can run:
+The web application consists in a dropdown which allows the selection of a city from a given list. Once you select a city it is added below the dropdown, showing the current weather for that city.
 
-### `yarn start`
+![Mockup](weather-info.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Each item in the list should:
+  - Display the city name and the current weather (eg: "Scattered clouds") as given by the weather API (icon is appreciated, but not required)
+  - Provide `refresh` and `remove` buttons
+  - Gracefully manage API errors
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Weather API
+The data should be fetched from [https://openweathermap.org/api](https://openweathermap.org/api)
 
-### `yarn test`
+An api key is already provided in `src/data/config.js`. Please mind there is a 60 requests/minute API limit, if it is exceeded you'll be locked out for some time (~1h). Not nice.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To simplify the city selector dropdown, you'll find a subset of cities to show in `src/data/cities.json`
 
-### `yarn build`
+## What's in this repo
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Feel free to use it or trash it completely and start from scratch.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Hints
+- Know what you are doing. Copy-pasting from StackOverflow is fine as long as you understand what's going on.
+- Focus on the code, rather than the esthetics.
+  - The linter is your friend.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Bonus track
+Persist the selected cities across sessions.
